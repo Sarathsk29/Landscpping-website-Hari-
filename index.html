@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN NATURAL EVER | Landscaping & Smart Irrigation Solutions</title>
+    <meta name="description"
+        content="GREEN NATURAL EVER provides professional landscaping, garden development, vertical gardens, terrace gardens, tree transplanting, and smarter irrigation solutions for beautiful green spaces.">
+    <meta name="keywords"
+        content="Landscaping, Smart Irrigation, Garden Development, Vertical Gardens, Terrace Gardens, Tree Transplanting, Garden Maintenance, Bangalore, Chennai, Mysore">
+    <meta name="theme-color" content="#0B6637">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="GREEN NATURAL EVER | Landscaping & Irrigation Solutions">
+    <meta property="og:description"
+        content="Professional landscaping and smarter irrigation solutions designed to transform outdoor spaces into beautiful, sustainable environments.">
+    <meta property="og:image" content="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configure Tailwind with extracted Brand Palette from Logo -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            forest: '#0B6637',      /* Primary Green from Logo "GREEN" & right leaf */
+                            leaf: '#6DB737',        /* Secondary Lime Green from Logo "EVER" & left leaf */
+                            water: '#0089CF',       /* Water Blue Accent from Logo droplet & "SMARTER IRRIGATION." */
+                            slate: '#1E293B',       /* Dark Charcoal from Logo "NATURAL" */
+                            dark: '#062C19',        /* Deep Emerald for Sustainability & Dark sections */
+                            footer: '#041A0F',      /* Premium Ultra Dark Footer */
+                            cream: '#F8FAF6',       /* Soft Earthy Light Background */
+                            surface: '#F0F4EC',     /* Muted Light Accent */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-green': '0 0 25px -5px rgba(11, 102, 55, 0.25)',
+                        'glow-blue': '0 0 25px -5px rgba(0, 137, 207, 0.3)',
+                        'card-hover': '0 20px 40px -15px rgba(6, 44, 25, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base typography & scrollbar customization */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAF6;
+            color: #1E293B;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F8FAF6;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0B6637;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6DB737;
+        }
+
+        /* Animated Floating Leaf Particle Effect */
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(4deg);
+            }
+        }
+
+        @keyframes pulse-subtle {
+
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.03);
+            }
+        }
+
+        .animate-float {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-subtle {
+            animation: pulse-subtle 4s ease-in-out infinite;
+        }
+
+        /* Glassmorphism Header */
+        .glass-nav {
+            background: rgba(248, 250, 246, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(11, 102, 55, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(11, 102, 55, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(6, 44, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(109, 183, 55, 0.2);
+        }
+
+        /* Image hover zoom */
+        .zoom-img-wrapper img {
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .zoom-img-wrapper:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Lightbox modal overlay */
+        .lightbox-overlay {
+            background: rgba(4, 26, 15, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="antialiased text-brand-slate selection:bg-brand-forest selection:text-white">
+
+    <!-- 5. STICKY NAVIGATION BAR -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 transition-all duration-300" id="navbar-container">
+
+                <!-- Brand Logo (Derived strictly from uploaded logo) -->
+                <a href="#home"
+                    class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-forest rounded-lg p-1">
+                    <div
+                        class="relative w-11 h-11 flex items-center justify-center bg-white rounded-xl shadow-md border border-brand-forest/10 p-1 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="GREEN NATURAL EVER Logo"
+                            class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center tracking-tight text-lg font-bold font-display leading-none">
+                            <span class="text-brand-forest">GREEN</span>
+                            <span class="text-brand-slate mx-1">NATURAL</span>
+                            <span class="text-brand-leaf">EVER</span>
+                        </div>
+                        <div class="flex items-center gap-1 mt-1">
+                            <span class="h-[1px] w-2 bg-brand-forest"></span>
+                            <span
+                                class="text-[9px] font-bold tracking-widest text-brand-water uppercase font-sans leading-none">SMARTER
+                                IRRIGATION.</span>
+                            <span class="h-[1px] w-2 bg-brand-forest"></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden xl:flex items-center gap-7 text-sm font-medium text-slate-700">
+                    <a href="#home"
+                        class="hover:text-brand-forest transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-forest hover:after:w-full after:transition-all">Home</a>
+                    <a href="#about"
+                        class="hover:text-brand-forest transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-forest hover:after:w-full after:transition-all">About</a>
+                    <a href="#services"
+                        class="hover:text-brand-forest transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-forest hover:after:w-full after:transition-all">Services</a>
+                    <a href="#projects"
+                        class="hover:text-brand-forest transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-forest hover:after:w-full after:transition-all">Projects</a>
+                    <a href="#contact"
+                        class="hover:text-brand-forest transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-forest hover:after:w-full after:transition-all">Contact</a>
+                </nav>
+
+                <!-- Right CTA Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <button onclick="openQuoteModal()"
+                        class="px-5 py-2.5 bg-brand-forest hover:bg-[#084e2a] text-white font-medium text-sm rounded-full shadow-md hover:shadow-glow-green transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <span>Get a Free Quote</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex items-center xl:hidden">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu"
+                        class="p-2.5 rounded-lg text-slate-700 hover:text-brand-forest hover:bg-brand-forest/5 focus:outline-none">
+                        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden bg-white/95 backdrop-blur-lg border-b border-brand-forest/10 px-4 pt-3 pb-6 shadow-xl transition-all">
+            <div class="flex flex-col space-y-3 font-medium text-slate-800">
+                <a href="#home" onclick="toggleMobileMenu()"
+                    class="px-3 py-2 rounded-md hover:bg-brand-forest/5 hover:text-brand-forest">Home</a>
+                <a href="#about" onclick="toggleMobileMenu()"
+                    class="px-3 py-2 rounded-md hover:bg-brand-forest/5 hover:text-brand-forest">About</a>
+                <a href="#services" onclick="toggleMobileMenu()"
+                    class="px-3 py-2 rounded-md hover:bg-brand-forest/5 hover:text-brand-forest">Services</a>
+                <a href="#projects" onclick="toggleMobileMenu()"
+                    class="px-3 py-2 rounded-md hover:bg-brand-forest/5 hover:text-brand-forest">Projects</a>
+                <a href="#contact" onclick="toggleMobileMenu()"
+                    class="px-3 py-2 rounded-md hover:bg-brand-forest/5 hover:text-brand-forest">Contact</a>
+                <div class="pt-2">
+                    <button onclick="toggleMobileMenu(); openQuoteModal()"
+                        class="w-full py-3 bg-brand-forest text-white font-semibold rounded-full shadow-md text-center flex items-center justify-center gap-2">
+                        <span>Get a Free Quote</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 6. HERO SECTION -->
+    <section id="home"
+        class="relative pt-28 pb-20 lg:pt-36 lg:pb-32 overflow-hidden bg-gradient-to-b from-brand-cream via-white to-brand-surface">
+
+        <!-- Subtle Natural Background Visual & Glow Overlay -->
+        <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2000&q=80"
+                alt="Landscaping Background Texture" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-brand-leaf/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-brand-water/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+                <!-- Left Hero Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+
+                    <!-- Secondary Brand Line & Location Badges -->
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-water/10 border border-brand-water/20 text-brand-water text-xs font-bold tracking-widest uppercase shadow-sm">
+                            <i data-lucide="droplet" class="w-3.5 h-3.5 text-brand-water"></i>
+                            <span>SMARTER IRRIGATION.</span>
+                        </div>
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-forest/10 border border-brand-forest/20 text-brand-forest text-xs font-bold tracking-widest uppercase shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-forest"></i>
+                            <span>PAN SOUTH INDIA</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-slate font-display tracking-tight leading-[1.15]">
+                        Creating Beautiful <br class="hidden sm:inline">
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-forest via-brand-forest to-brand-leaf">Green
+                            Spaces.</span>
+                    </h1>
+
+                    <!-- Supporting Text -->
+                    <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl">
+                        Professional landscaping and smarter irrigation solutions designed to transform outdoor spaces
+                        into beautiful, sustainable environments.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="pt-4 flex flex-wrap items-center gap-4 sm:gap-5">
+                        <button onclick="openQuoteModal()"
+                            class="px-8 py-4 bg-brand-forest hover:bg-[#084e2a] text-white font-semibold rounded-full shadow-lg hover:shadow-glow-green transition-all duration-300 flex items-center gap-3 transform hover:-translate-y-1">
+                            <span>Get a Free Quote</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                        <a href="#projects"
+                            class="px-8 py-4 bg-white hover:bg-brand-forest/5 text-brand-slate hover:text-brand-forest font-semibold rounded-full border border-slate-300 shadow-sm transition-all duration-300 flex items-center gap-2">
+                            <span>Explore Our Work</span>
+                            <i data-lucide="eye" class="w-4 h-4 text-brand-leaf"></i>
+                        </a>
+                    </div>
+
+                    <!-- Hero Feature Metrics Badge -->
+                    <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-xl">
+                        <div class="space-y-1">
+                            <div class="text-2xl font-bold font-display text-brand-forest">100%</div>
+                            <div class="text-xs text-slate-500 font-medium">Custom Landscape Design</div>
+                        </div>
+                        <div class="space-y-1">
+                            <div class="text-2xl font-bold font-display text-brand-water">40%+</div>
+                            <div class="text-xs text-slate-500 font-medium">Water Efficiency Savings</div>
+                        </div>
+                        <div class="space-y-1">
+                            <div class="text-2xl font-bold font-display text-brand-leaf">Eco-Smart</div>
+                            <div class="text-xs text-slate-500 font-medium">Sustainable Development</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Hero Visual Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+
+                        <!-- Decorative Frame Backdrop -->
+                        <div
+                            class="absolute -inset-3 bg-gradient-to-tr from-brand-forest to-brand-leaf rounded-3xl opacity-20 blur-xl animate-pulse-subtle">
+                        </div>
+
+                        <!-- Main Hero Image Card -->
+                        <div
+                            class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group zoom-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80"
+                                alt="Green Natural Ever Premium Landscaping" class="w-full h-[450px] object-cover">
+
+                            <!-- Floating Card Overlay (Landscaping + Smart Irrigation) -->
+                            <div
+                                class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl glass-dark text-white flex items-center justify-between shadow-lg">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-brand-leaf/20 border border-brand-leaf/40 flex items-center justify-center text-brand-leaf">
+                                        <i data-lucide="leaf" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-semibold text-white">Turnkey Green Environments</div>
+                                        <div class="text-xs text-slate-300">Design · Irrigation · Maintenance</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-brand-water flex items-center justify-center text-white shadow-md">
+                                    <i data-lucide="droplet" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. INTRODUCTION SECTION -->
+    <section class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="text-xs font-bold tracking-widest text-brand-forest uppercase">INTRODUCTION</div>
+                <h2 class="text-3xl sm:text-4xl font-bold font-display text-brand-slate">Nature, Designed Around You.
+                </h2>
+                <p class="text-slate-600 leading-relaxed">
+                    We bridge ecological landscaping artistry with precision water management, creating outdoor
+                    environments that flourish naturally while conserving valuable resources.
+                </p>
+            </div>
+
+            <!-- 3 Visual Highlights -->
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Highlight 1: Landscape Design -->
+                <div
+                    class="p-8 rounded-2xl bg-brand-cream border border-brand-forest/10 hover:border-brand-forest/30 shadow-sm hover:shadow-card-hover transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-brand-forest/10 text-brand-forest flex items-center justify-center mb-6 group-hover:bg-brand-forest group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="trees" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-display text-brand-slate mb-3">Landscape Design</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Beautiful and functional outdoor spaces customized to your property's microclimate and aesthetic
+                        architectural vision.
+                    </p>
+                </div>
+
+                <!-- Highlight 2: Smart Irrigation -->
+                <div
+                    class="p-8 rounded-2xl bg-brand-cream border border-brand-water/10 hover:border-brand-water/30 shadow-sm hover:shadow-card-hover transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-brand-water/10 text-brand-water flex items-center justify-center mb-6 group-hover:bg-brand-water group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="droplets" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-display text-brand-slate mb-3">Smart Irrigation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Efficient water management, micro-drip systems, and automated pop-up sprinklers for healthier
+                        landscapes and zero water waste.
+                    </p>
+                </div>
+
+                <!-- Highlight 3: Garden Care -->
+                <div
+                    class="p-8 rounded-2xl bg-brand-cream border border-brand-leaf/10 hover:border-brand-leaf/30 shadow-sm hover:shadow-card-hover transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-brand-leaf/10 text-brand-leaf flex items-center justify-center mb-6 group-hover:bg-brand-leaf group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="sprout" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-display text-brand-slate mb-3">Garden Care</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Professional development, seasonal nutrition, pruning, and long-term maintenance ensuring
+                        year-round vitality for green spaces.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ABOUT US SECTION -->
+    <section id="about" class="py-20 lg:py-28 bg-brand-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+                <!-- Left Image Column -->
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-32 h-32 bg-brand-leaf/20 rounded-2xl -z-10"></div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-water/20 rounded-2xl -z-10"></div>
+
+                        <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white zoom-img-wrapper bg-white flex items-center justify-center">
+                            <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png"
+                                alt="GREEN NATURAL EVER Logo" class="w-3/4 h-auto object-contain p-8">
+                        </div>
+
+                        <!-- Brand Statement Tag -->
+                        <div
+                            class="absolute bottom-6 right-6 bg-white p-5 rounded-2xl shadow-xl border border-brand-forest/10 max-w-xs hidden sm:block">
+                            <div class="text-xs font-bold text-brand-forest uppercase tracking-wider mb-1">OUR
+                                PHILOSOPHY</div>
+                            <div class="text-sm font-semibold text-slate-800">"Creating spaces that are visually
+                                appealing, functional, and environmentally sound."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content Column (EXACT COPY FROM PROMPT) -->
+                <div class="lg:col-span-6 space-y-6">
+
+                    <div
+                        class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-brand-forest uppercase">
+                        <i data-lucide="flower-2" class="w-4 h-4 text-brand-leaf"></i>
+                        <span>ABOUT GREEN NATURAL EVER</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-bold font-display text-brand-slate leading-tight">
+                        Growing Spaces. <br>Creating Experiences.
+                    </h2>
+
+                    <!-- Exact verbatim prompt paragraphs -->
+                    <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+                        <p>
+                            Green Natural Ever provides landscaping and irrigation solutions designed to create
+                            beautiful, comfortable and sustainable outdoor environments.
+                        </p>
+                        <p>
+                            Our approach combines landscape design, plant selection, garden development and efficient
+                            irrigation systems to create spaces that are both visually appealing and practical.
+                        </p>
+                        <p>
+                            Every project is planned according to the customer's requirements, site conditions and
+                            long-term maintenance needs.
+                        </p>
+                    </div>
+
+                    <!-- 3 Core Values -->
+                    <div class="pt-4 grid grid-cols-3 gap-4 border-t border-slate-200">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-brand-forest/10 text-brand-forest flex items-center justify-center font-bold text-sm">
+                                ✓</div>
+                            <span class="font-bold text-slate-800 text-sm font-display">Quality</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-brand-leaf/10 text-brand-leaf flex items-center justify-center font-bold text-sm">
+                                ✓</div>
+                            <span class="font-bold text-slate-800 text-sm font-display">Sustainability</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-brand-water/10 text-brand-water flex items-center justify-center font-bold text-sm">
+                                ✓</div>
+                            <span class="font-bold text-slate-800 text-sm font-display">Customer Focus</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SERVICES SECTION (01 - 06) -->
+    <section id="services" class="py-20 lg:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <div class="text-xs font-bold tracking-widest text-brand-forest uppercase mb-2">SERVICES</div>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-display text-brand-slate">What We Do</h2>
+                </div>
+                <p class="text-slate-600 max-w-md text-sm">
+                    Comprehensive environmental and outdoor development services engineered for residential, commercial,
+                    resort, and industrial spaces.
+                </p>
+            </div>
+
+            <!-- 6 Service Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 01 — Landscaping -->
+                <div
+                    class="rounded-2xl bg-brand-cream border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="text-3xl font-extrabold font-display text-brand-forest/30 group-hover:text-brand-forest transition-colors">01</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-forest/10 text-brand-forest flex items-center justify-center group-hover:bg-brand-forest group-hover:text-white transition-colors">
+                                <i data-lucide="trees" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-brand-slate mb-3">Landscaping</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Landscape design and outdoor development. Crafting serene lawns, floral borders, hardscapes,
+                            and natural softscapes tailored to site topography.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <button
+                            onclick="openServiceDetail('01 — Landscaping', 'Complete end-to-end landscape architecture including soil enrichment, softscape grading, walkway creation, ornamental shrubbery, and aesthetic master planning.')"
+                            class="text-xs font-bold text-brand-forest flex items-center gap-2 group-hover:gap-3 transition-all">
+                            <span>EXPLORE SERVICE</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 02 — Irrigation Systems -->
+                <div
+                    class="rounded-2xl bg-brand-cream border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="text-3xl font-extrabold font-display text-brand-water/30 group-hover:text-brand-water transition-colors">02</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-water/10 text-brand-water flex items-center justify-center group-hover:bg-brand-water group-hover:text-white transition-colors">
+                                <i data-lucide="droplet" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-brand-slate mb-3">Irrigation Systems</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Sprinkler and efficient irrigation solutions. Automated pop-up rotors, rain sensors,
+                            micro-drip networks, and smart water management timers.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <button
+                            onclick="openServiceDetail('02 — Irrigation Systems', 'Advanced water-saving irrigation engineering ensuring targeted deep-root hydration, automated schedules, and up to 40% reduction in water consumption.')"
+                            class="text-xs font-bold text-brand-water flex items-center gap-2 group-hover:gap-3 transition-all">
+                            <span>EXPLORE SERVICE</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 03 — Vertical Gardens -->
+                <div
+                    class="rounded-2xl bg-brand-cream border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="text-3xl font-extrabold font-display text-brand-leaf/40 group-hover:text-brand-leaf transition-colors">03</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-leaf/10 text-brand-leaf flex items-center justify-center group-hover:bg-brand-leaf group-hover:text-white transition-colors">
+                                <i data-lucide="layers" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-brand-slate mb-3">Vertical Gardens</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Green walls and vertical landscaping. Transforming blank architectural walls into vibrant,
+                            air-purifying living green installations.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <button
+                            onclick="openServiceDetail('03 — Vertical Gardens', 'Living wall technology utilizing modular geo-textile pockets, integrated automated drip lines, and shadow-tolerant flora for interior and exterior facades.')"
+                            class="text-xs font-bold text-brand-leaf flex items-center gap-2 group-hover:gap-3 transition-all">
+                            <span>EXPLORE SERVICE</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 04 — Terrace & Kitchen Gardens -->
+                <div
+                    class="rounded-2xl bg-brand-cream border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="text-3xl font-extrabold font-display text-brand-forest/30 group-hover:text-brand-forest transition-colors">04</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-forest/10 text-brand-forest flex items-center justify-center group-hover:bg-brand-forest group-hover:text-white transition-colors">
+                                <i data-lucide="sun" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-brand-slate mb-3">Terrace & Kitchen Gardens</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Transforming terraces into beautiful green spaces. Lightweight planters, organic herb beds,
+                            pergola shading, and rooftop oases.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <button
+                            onclick="openServiceDetail('04 — Terrace & Kitchen Gardens', 'Structural load testing, waterproof membrane protection, and ergonomic rooftop vegetable and floral garden design.')"
+                            class="text-xs font-bold text-brand-forest flex items-center gap-2 group-hover:gap-3 transition-all">
+                            <span>EXPLORE SERVICE</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 05 — Garden Maintenance -->
+                <div
+                    class="rounded-2xl bg-brand-cream border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="text-3xl font-extrabold font-display text-brand-leaf/40 group-hover:text-brand-leaf transition-colors">05</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-leaf/10 text-brand-leaf flex items-center justify-center group-hover:bg-brand-leaf group-hover:text-white transition-colors">
+                                <i data-lucide="scissors" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-brand-slate mb-3">Garden Maintenance</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Keeping landscapes healthy and beautiful. Scheduled lawn mowing, organic fertilization, pest
+                            management, hedging, and seasonal care.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <button
+                            onclick="openServiceDetail('05 — Garden Maintenance', 'Dedicated horticulturist visits, soil pH balancing, eco-friendly pest controls, and continuous aesthetic enhancement.')"
+                            class="text-xs font-bold text-brand-leaf flex items-center gap-2 group-hover:gap-3 transition-all">
+                            <span>EXPLORE SERVICE</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 06 — Tree Transplanting -->
+                <div
+                    class="rounded-2xl bg-brand-cream border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="text-3xl font-extrabold font-display text-brand-forest/30 group-hover:text-brand-forest transition-colors">06</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-forest/10 text-brand-forest flex items-center justify-center group-hover:bg-brand-forest group-hover:text-white transition-colors">
+                                <i data-lucide="move" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display text-brand-slate mb-3">Tree Transplanting</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Professional tree relocation and planting. Specialized root-ball protection, heavy machinery
+                            relocation, and post-transplant care.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <button
+                            onclick="openServiceDetail('06 — Tree Transplanting', 'Safely saving mature trees during expansion by relocating root systems with high survival rates and root-stimulation treatments.')"
+                            class="text-xs font-bold text-brand-forest flex items-center gap-2 group-hover:gap-3 transition-all">
+                            <span>EXPLORE SERVICE</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 10. FEATURED PROJECTS SECTION -->
+    <section id="projects" class="py-20 lg:py-28 bg-brand-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="text-xs font-bold tracking-widest text-brand-forest uppercase mb-2">PORTFOLIO</div>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-display text-brand-slate">Spaces We've Transformed
+                    </h2>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-2 text-xs font-medium">
+                    <button onclick="filterProjects('all')"
+                        class="px-4 py-2 rounded-full bg-brand-forest text-white shadow-sm transition-all proj-filter-btn"
+                        data-filter="all">All Projects</button>
+                    <button onclick="filterProjects('resort')"
+                        class="px-4 py-2 rounded-full bg-white text-slate-700 hover:bg-brand-forest/10 transition-all proj-filter-btn"
+                        data-filter="resort">Resort & Spa</button>
+                    <button onclick="filterProjects('residential')"
+                        class="px-4 py-2 rounded-full bg-white text-slate-700 hover:bg-brand-forest/10 transition-all proj-filter-btn"
+                        data-filter="residential">Residential</button>
+                    <button onclick="filterProjects('industrial')"
+                        class="px-4 py-2 rounded-full bg-white text-slate-700 hover:bg-brand-forest/10 transition-all proj-filter-btn"
+                        data-filter="industrial">Industrial</button>
+                </div>
+            </div>
+
+            <!-- Project Grid featuring exact company portfolio items -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+
+                <!-- Project 1: Birla Apple Bangalore -->
+                <div
+                    class="proj-card residential rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden zoom-img-wrapper">
+                        <img src="C:/Users/sarat/.gemini/antigravity-ide/brain/402df3d5-c93d-403a-bbac-4e0aceb060b2/media__1787231268915.png"
+                            alt="Birla Apple Bangalore" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-brand-forest font-semibold text-xs flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                            <span>Bangalore</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-display text-brand-slate mb-1">Birla Apple</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Resort-Style Residential Landscape</p>
+                        <p class="text-slate-600 text-sm line-clamp-2">Luxury residential green development featuring
+                            pool surrounds, manicured lawn pathways, and children's park integration.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: Vertical Garden Mysore -->
+                <div
+                    class="proj-card residential rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden zoom-img-wrapper">
+                        <img src="C:/Users/sarat/.gemini/antigravity-ide/brain/402df3d5-c93d-403a-bbac-4e0aceb060b2/media__1787231719503.png"
+                            alt="Vertical Green Wall Mysore" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-brand-forest font-semibold text-xs flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                            <span>Mysore</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-display text-brand-slate mb-1">Vertical Green Wall</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Architectural Living Wall Installation</p>
+                        <p class="text-slate-600 text-sm line-clamp-2">Precision modular vertical garden wall featuring
+                            automated drip irrigation and vibrant multi-colored foliage.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3: Hotel Harsha International Shimoga -->
+                <div
+                    class="proj-card resort rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden zoom-img-wrapper">
+                        <img src="C:/Users/sarat/.gemini/antigravity-ide/brain/402df3d5-c93d-403a-bbac-4e0aceb060b2/media__1787231850453.png"
+                            alt="Hotel Harsha International Shimoga" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-brand-forest font-semibold text-xs flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                            <span>Shimoga</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-display text-brand-slate mb-1">Hotel Harsha International</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Hospitality Lawn & Courtyard</p>
+                        <p class="text-slate-600 text-sm line-clamp-2">Grand manicured courtyard lawn development,
+                            ornamental palm borders, and automated irrigation system.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4: Purva Raagam Chennai -->
+                <div
+                    class="proj-card residential rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden zoom-img-wrapper">
+                        <img src="C:/Users/sarat/.gemini/antigravity-ide/brain/402df3d5-c93d-403a-bbac-4e0aceb060b2/media__1787232067473.png"
+                            alt="Purva Raagam Chennai" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-brand-forest font-semibold text-xs flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                            <span>Chennai</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-display text-brand-slate mb-1">Purva Raagam</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Premium Gated Community</p>
+                        <p class="text-slate-600 text-sm line-clamp-2">Lush floral entrance planters, raised granite
+                            softscape beds, frangipani trees, and automated pop-up irrigation network.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5: Grass Cultivation Chennai -->
+                <div
+                    class="proj-card residential rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden zoom-img-wrapper">
+                        <img src="C:/Users/sarat/.gemini/antigravity-ide/brain/402df3d5-c93d-403a-bbac-4e0aceb060b2/media__1787232211338.png"
+                            alt="Grass Cultivation Chennai" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-brand-forest font-semibold text-xs flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                            <span>Chennai</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-display text-brand-slate mb-1">Grass Cultivation</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Natural Turf Farm & Sod Laying</p>
+                        <p class="text-slate-600 text-sm line-clamp-2">Scientific cultivation of high-density lawn turf
+                            grass, sod harvesting, and instant green lawn installation.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6: Tree Transplanting Bangalore -->
+                <div
+                    class="proj-card industrial rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden zoom-img-wrapper">
+                        <img src="C:/Users/sarat/.gemini/antigravity-ide/brain/402df3d5-c93d-403a-bbac-4e0aceb060b2/media__1787232419109.png"
+                            alt="Tree Transplanting Bangalore" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-brand-forest font-semibold text-xs flex items-center gap-1.5 shadow-sm">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                            <span>Bangalore</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-display text-brand-slate mb-1">Tree Transplanting</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Mature Tree Relocation & Rescue</p>
+                        <p class="text-slate-600 text-sm line-clamp-2">Specialized heavy crane mature tree relocation,
+                            root-ball preservation, and post-transplant health care.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="mt-12 text-center">
+                <button onclick="openQuoteModal()"
+                    class="px-8 py-3.5 bg-brand-forest hover:bg-[#084e2a] text-white font-semibold text-sm rounded-full shadow-md hover:shadow-glow-green transition-all inline-flex items-center gap-2">
+                    <span>View All Projects & Plan Yours</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- 16. FINAL CALL TO ACTION SECTION -->
+    <section
+        class="py-20 bg-gradient-to-br from-brand-forest via-brand-dark to-brand-slate text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2000&q=80"
+                alt="Green Landscape CTA" class="w-full h-full object-cover">
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-6">
+            <!-- Logo Display -->
+            <div class="flex justify-center mb-8">
+                <div class="w-32 h-32 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 p-6 flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300">
+                    <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="GREEN NATURAL EVER Logo" class="w-full h-full object-contain">
+                </div>
+            </div>
+            
+            <h2 class="text-4xl sm:text-5xl font-extrabold font-display">Let's Create Something Green.</h2>
+            <p class="text-slate-200 text-lg max-w-2xl mx-auto leading-relaxed">
+                Have a space that needs a new life? Let's transform it into a beautiful green environment.
+            </p>
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <button onclick="openQuoteModal()"
+                    class="px-8 py-4 bg-white text-brand-forest hover:bg-brand-cream font-bold rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <span>Get a Free Quote</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <a href="https://wa.me/919342530961?text=Hello%20Green%20Natural%20Ever,%20I%20would%20like%20to%20enquire%20about%20landscaping%20and%20irrigation%20services."
+                    target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    <span>WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 17. CONTACT SECTION -->
+    <section id="contact" class="py-20 lg:py-28 bg-brand-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid lg:grid-cols-12 gap-12">
+
+                <!-- Left Info Card -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <div class="text-xs font-bold tracking-widest text-brand-forest uppercase mb-2">CONTACT US</div>
+                        <h2 class="text-3xl sm:text-4xl font-bold font-display text-brand-slate">Let's Talk About Your
+                            Project.</h2>
+                        <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            Reach out to our engineering team for site consultations, quotation requests, or smart
+                            irrigation upgrades.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-brand-forest/10 text-brand-forest flex items-center justify-center shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-slate-400 uppercase">Call Us</div>
+                                <a href="tel:+919342530961"
+                                    class="text-base font-bold text-brand-slate hover:text-brand-forest transition-colors mt-0.5 block">+91
+                                    93425 30961</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0">
+                                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-slate-400 uppercase">WhatsApp</div>
+                                <a href="https://wa.me/919342530961" target="_blank" rel="noopener noreferrer"
+                                    class="text-base font-bold text-brand-slate hover:text-brand-forest transition-colors mt-0.5 block">+91
+                                    93425 30961</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-brand-water/10 text-brand-water flex items-center justify-center shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-slate-400 uppercase">Email</div>
+                                <a href="mailto:landscappingevergreen@gmail.com"
+                                    class="text-base font-bold text-brand-slate hover:text-brand-forest transition-colors mt-0.5 block">landscappingevergreen@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-brand-leaf/10 text-brand-leaf flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-slate-400 uppercase">Service Coverage</div>
+                                <div class="text-base font-bold text-brand-slate mt-0.5">Pan South India (Bangalore ·
+                                    Mysore · Chennai & South India)</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Form Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-slate-200/80">
+                        <h3 class="text-2xl font-bold font-display text-brand-slate mb-6">Send an Enquiry</h3>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Full Name
+                                        *</label>
+                                    <input type="text" required placeholder="John Doe"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20 text-sm outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number
+                                        *</label>
+                                    <input type="tel" required placeholder="+91 98765 43210"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20 text-sm outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email
+                                        Address</label>
+                                    <input type="email" placeholder="john@example.com"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20 text-sm outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Project
+                                        Location</label>
+                                    <input type="text" placeholder="e.g. Bangalore / Mysore"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20 text-sm outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Service Required
+                                    *</label>
+                                <select required
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20 text-sm outline-none transition-all bg-white">
+                                    <option value="">Select a Service...</option>
+                                    <option value="Landscaping">Landscaping & Design</option>
+                                    <option value="Irrigation">Irrigation Systems</option>
+                                    <option value="Vertical Gardens">Vertical Gardens</option>
+                                    <option value="Terrace Gardens">Terrace & Kitchen Gardens</option>
+                                    <option value="Garden Maintenance">Garden Maintenance</option>
+                                    <option value="Tree Transplanting">Tree Transplanting</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Message</label>
+                                <textarea rows="4"
+                                    placeholder="Tell us about your project requirements, space size, or questions..."
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20 text-sm outline-none transition-all resize-none"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 bg-brand-forest hover:bg-[#084e2a] text-white font-bold rounded-xl shadow-md hover:shadow-glow-green transition-all flex items-center justify-center gap-2">
+                                <span>Send Enquiry</span>
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 18. FOOTER -->
+    <footer class="bg-brand-footer text-white pt-16 pb-12 border-t border-brand-forest/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center">
+                            <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="Logo"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <div class="font-display font-bold text-lg text-white">
+                            GREEN NATURAL EVER
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold tracking-widest text-brand-water uppercase">SMARTER IRRIGATION.</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Creating Beautiful Green Spaces. Professional landscaping, garden development, vertical walls,
+                        and smart water solutions.
+                    </p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold font-display uppercase tracking-wider text-brand-leaf mb-4">Quick Links
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#projects" class="hover:text-white transition-colors">Featured Projects</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="text-sm font-bold font-display uppercase tracking-wider text-brand-leaf mb-4">Services
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#services" class="hover:text-white transition-colors">Landscaping</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Irrigation Systems</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Vertical Gardens</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Terrace Gardens</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Garden Maintenance</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Tree Transplanting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="text-sm font-bold font-display uppercase tracking-wider text-brand-leaf mb-4">Contact
+                        Info</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-brand-water"></i>
+                            <a href="tel:+919342530961" class="hover:text-white transition-colors">+91 93425 30961</a>
+                        </li>
+                        <li class="flex items-center gap-2"><i data-lucide="message-circle"
+                                class="w-4 h-4 text-[#25D366]"></i> <a href="https://wa.me/919342530961" target="_blank"
+                                rel="noopener noreferrer" class="hover:text-white transition-colors">+91 93425 30961
+                                (WhatsApp)</a></li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-brand-leaf"></i>
+                            <a href="mailto:landscappingevergreen@gmail.com"
+                                class="hover:text-white transition-colors">landscappingevergreen@gmail.com</a></li>
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin"
+                                class="w-4 h-4 text-brand-water"></i> <span>Pan South India Operations</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <div>© 2026 GREEN NATURAL EVER. All Rights Reserved.</div>
+                <div class="flex gap-6">
+                    <a href="#home" class="hover:text-white">Privacy Policy</a>
+                    <a href="#home" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GET A FREE QUOTE POPUP MODAL -->
+    <div id="quote-modal"
+        class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white max-w-lg w-full rounded-3xl p-8 shadow-2xl relative border border-brand-forest/20">
+            <button onclick="closeQuoteModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="flex items-center gap-2 text-xs font-bold text-brand-forest uppercase mb-1">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <span>QUICK QUOTATION</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display text-brand-slate mb-4">Request a Free Quote</h3>
+            <form onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
+                    <input type="text" required placeholder="Enter full name"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp</label>
+                    <input type="tel" required placeholder="+91..."
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Interest</label>
+                    <select required
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none">
+                        <option value="Landscaping">Landscaping & Design</option>
+                        <option value="Irrigation">Smart Irrigation Systems</option>
+                        <option value="Vertical Gardens">Vertical Green Walls</option>
+                        <option value="Terrace Gardens">Terrace & Kitchen Gardens</option>
+                        <option value="Garden Maintenance">Garden Maintenance</option>
+                        <option value="Tree Transplanting">Tree Relocation</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="w-full py-3.5 bg-brand-forest text-white font-bold rounded-xl shadow-md hover:bg-[#084e2a] transition-all">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Shrink Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            const container = document.getElementById('navbar-container');
+            if (window.scrollY > 40) {
+                container.classList.remove('h-20');
+                container.classList.add('h-16');
+            } else {
+                container.classList.remove('h-16');
+                container.classList.add('h-20');
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+            menu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        }
+
+        // Project Category Filter
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.proj-card');
+            const buttons = document.querySelectorAll('.proj-filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.remove('bg-white', 'text-slate-700');
+                    btn.classList.add('bg-brand-forest', 'text-white');
+                } else {
+                    btn.classList.remove('bg-brand-forest', 'text-white');
+                    btn.classList.add('bg-white', 'text-slate-700');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Quote Modal Functions
+        function openQuoteModal() {
+            document.getElementById('quote-modal').classList.remove('hidden');
+        }
+        function closeQuoteModal() {
+            document.getElementById('quote-modal').classList.add('hidden');
+        }
+
+        // Form Submit Handlers
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your enquiry has been received. Our landscaping & irrigation experts at Green Natural Ever will contact you within 24 hours.');
+            e.target.reset();
+        }
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            alert('Quotation request submitted! We will send a customized landscape estimate to your phone/email shortly.');
+            closeQuoteModal();
+            e.target.reset();
+        }
+    </script>
+</body>
+
+</html>
