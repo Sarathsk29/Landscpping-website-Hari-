@@ -168,38 +168,104 @@
             background: rgba(4, 26, 15, 0.95);
             backdrop-filter: blur(10px);
         }
+
+        /* Intro screen transition */
+        .intro-screen {
+            opacity: 1;
+            filter: blur(0);
+            transition: opacity 0.8s ease, filter 0.8s ease;
+            background-image: linear-gradient(rgba(248, 250, 246, 0.78), rgba(240, 244, 236, 0.84)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=2000&q=80');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .intro-screen.is-fading {
+            opacity: 0;
+            filter: blur(14px);
+            pointer-events: none;
+        }
+
+        .intro-logo {
+            transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+            animation: intro-logo-in 1.5s ease-out both;
+            mix-blend-mode: multiply;
+        }
+
+        @keyframes intro-logo-in {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+                filter: blur(16px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .intro-screen.is-fading .intro-logo {
+            opacity: 0;
+            transform: scale(0.94);
+            filter: blur(18px);
+        }
+
+        #main-header {
+            opacity: 1;
+            transition: opacity 0.6s ease;
+        }
+
+        body.intro-active #main-header {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 639px) {
+            #navbar-container {
+                min-height: 4.5rem;
+            }
+
+            .intro-logo {
+                width: min(82vw, 22rem);
+            }
+
+            #home .grid-cols-3 {
+                gap: 0.65rem;
+            }
+
+            #home .grid-cols-3 > div {
+                min-width: 0;
+            }
+
+            #home .grid-cols-3 .text-xs {
+                font-size: 0.65rem;
+                line-height: 1.25;
+            }
+        }
     </style>
 </head>
 
-<body class="antialiased text-brand-slate selection:bg-brand-forest selection:text-white">
+<body class="intro-active antialiased text-brand-slate selection:bg-brand-forest selection:text-white">
+
+    <!-- 4. FULL-SCREEN BRAND INTRO -->
+    <section id="intro-screen"
+        class="intro-screen fixed inset-0 z-40 flex items-center justify-center overflow-hidden bg-white/80 backdrop-blur-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/45 via-brand-cream/35 to-brand-surface/45"></div>
+        <div class="intro-logo relative z-10 aspect-square w-[min(78vw,30rem)]">
+            <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="GREEN NATURAL EVER Logo"
+            class="h-full w-full object-contain">
+        </div>
+    </section>
 
     <!-- 5. STICKY NAVIGATION BAR -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 transition-all duration-300" id="navbar-container">
 
-                <!-- Brand Logo (Derived strictly from uploaded logo) -->
-                <a href="#home"
-                    class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-forest rounded-lg p-1">
-                    <div
-                        class="relative w-11 h-11 flex items-center justify-center bg-white rounded-xl shadow-md border border-brand-forest/10 p-1 group-hover:scale-105 transition-transform duration-300">
-                        <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="GREEN NATURAL EVER Logo"
-                            class="w-full h-full object-contain">
-                    </div>
-                    <div class="flex flex-col">
-                        <div class="flex items-center tracking-tight text-lg font-bold font-display leading-none">
-                            <span class="text-brand-forest">GREEN</span>
-                            <span class="text-brand-slate mx-1">NATURAL</span>
-                            <span class="text-brand-leaf">EVER</span>
-                        </div>
-                        <div class="flex items-center gap-1 mt-1">
-                            <span class="h-[1px] w-2 bg-brand-forest"></span>
-                            <span
-                                class="text-[9px] font-bold tracking-widest text-brand-water uppercase font-sans leading-none">SMARTER
-                                IRRIGATION.</span>
-                            <span class="h-[1px] w-2 bg-brand-forest"></span>
-                        </div>
-                    </div>
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center group focus:outline-none focus:ring-2 focus:ring-brand-forest rounded-lg">
+                    <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="GREEN NATURAL EVER Logo"
+                        class="w-44 h-14 sm:w-60 sm:h-16 xl:w-72 xl:h-20 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300">
                 </a>
 
                 <!-- Desktop Navigation Links -->
@@ -355,7 +421,7 @@
                         <div
                             class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group zoom-img-wrapper">
                             <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80"
-                                alt="Green Natural Ever Premium Landscaping" class="w-full h-[450px] object-cover">
+                                alt="Green Natural Ever Premium Landscaping" class="w-full h-[360px] sm:h-[450px] object-cover">
 
                             <!-- Floating Card Overlay (Landscaping + Smart Irrigation) -->
                             <div
@@ -1207,6 +1273,16 @@
         window.addEventListener('scroll', () => {
             const header = document.getElementById('main-header');
             const container = document.getElementById('navbar-container');
+            const intro = document.getElementById('intro-screen');
+
+            if (window.scrollY > 24) {
+                document.body.classList.remove('intro-active');
+                intro.classList.add('is-fading');
+            } else {
+                document.body.classList.add('intro-active');
+                intro.classList.remove('is-fading');
+            }
+
             if (window.scrollY > 40) {
                 container.classList.remove('h-20');
                 container.classList.add('h-16');
