@@ -1156,20 +1156,26 @@
                 <span>QUICK QUOTATION</span>
             </div>
             <h3 class="text-2xl font-bold font-display text-brand-slate mb-4">Request a Free Quote</h3>
-            <form onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <input type="hidden" name="access_key" value="5694a8b1-cd21-4151-96b8-3b8ecf35ec4b">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
-                    <input type="text" required placeholder="Enter full name"
+                    <input type="text" name="name" required placeholder="Enter full name"
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp</label>
-                    <input type="tel" required placeholder="+91..."
+                    <input type="tel" name="phone" required placeholder="+91..."
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+                    <input type="email" name="email" required placeholder="you@example.com"
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Interest</label>
-                    <select required
+                    <select name="service" required
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none">
                         <option value="Landscaping">Landscaping & Design</option>
                         <option value="Irrigation">Smart Irrigation Systems</option>
@@ -1178,6 +1184,11 @@
                         <option value="Garden Maintenance">Garden Maintenance</option>
                         <option value="Tree Transplanting">Tree Relocation</option>
                     </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message</label>
+                    <textarea name="message" required rows="3" placeholder="Tell us about your project"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-forest text-sm outline-none resize-none"></textarea>
                 </div>
                 <button type="submit"
                     class="w-full py-3.5 bg-brand-forest text-white font-bold rounded-xl shadow-md hover:bg-[#084e2a] transition-all">
