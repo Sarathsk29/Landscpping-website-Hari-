@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" style="scroll-padding-top: 80px;">
 
 <head>
     <meta charset="UTF-8">
@@ -69,6 +69,16 @@
             background-color: #F8FAF6;
             color: #1E293B;
             overflow-x: hidden;
+        }
+
+
+        /* Intro tap hint pulse */
+        @keyframes hint-fade {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .intro-hint {
+            animation: hint-fade 1.4s ease-in-out infinite;
         }
 
         h1,
@@ -220,6 +230,11 @@
             pointer-events: none;
         }
 
+        /* Adjust scroll-padding when navbar shrinks on scroll */
+        html.nav-shrunk {
+            scroll-padding-top: 64px;
+        }
+
         @media (max-width: 639px) {
             #navbar-container {
                 min-height: 4.5rem;
@@ -249,12 +264,13 @@
 
     <!-- 4. FULL-SCREEN BRAND INTRO -->
     <section id="intro-screen"
-        class="intro-screen fixed inset-0 z-40 flex items-center justify-center overflow-hidden bg-white/80 backdrop-blur-xl">
+        class="intro-screen fixed inset-0 z-40 flex flex-col items-center justify-center overflow-hidden bg-white/80 backdrop-blur-xl">
         <div class="absolute inset-0 bg-gradient-to-br from-white/45 via-brand-cream/35 to-brand-surface/45"></div>
         <div class="intro-logo relative z-10 aspect-square w-[min(78vw,30rem)]">
             <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="GREEN NATURAL EVER Logo"
             class="h-full w-full object-contain">
         </div>
+        <p class="intro-hint relative z-10 mt-6 text-xs font-semibold tracking-widest text-brand-forest/60 uppercase">↓ Scroll to explore</p>
     </section>
 
     <!-- 5. STICKY NAVIGATION BAR -->
@@ -265,7 +281,7 @@
                 <!-- Brand Logo -->
                 <a href="#home" class="flex items-center group focus:outline-none focus:ring-2 focus:ring-brand-forest rounded-lg">
                     <img src="ChatGPT Image Aug 20, 2026, 06_11_12 PM.png" alt="GREEN NATURAL EVER Logo"
-                        class="w-44 h-14 sm:w-60 sm:h-16 xl:w-72 xl:h-20 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300">
+                        class="h-10 w-auto sm:h-12 xl:h-14 max-h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300">
                 </a>
 
                 <!-- Desktop Navigation Links -->
@@ -580,6 +596,20 @@
                                 class="w-8 h-8 rounded-full bg-brand-water/10 text-brand-water flex items-center justify-center font-bold text-sm">
                                 ✓</div>
                             <span class="font-bold text-slate-800 text-sm font-display">Customer Focus</span>
+                        </div>
+                    </div>
+
+                    <!-- Founder Card -->
+                    <div class="mt-6 flex items-center gap-4 p-4 rounded-2xl bg-brand-forest/5 border border-brand-forest/15">
+                        <div class="w-12 h-12 rounded-full bg-brand-forest flex items-center justify-center text-white shrink-0 shadow-md">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold tracking-widest text-brand-forest uppercase">Founder &amp; Director</div>
+                            <div class="text-base font-bold font-display text-brand-slate mt-0.5">Hari Haran J</div>
+                        </div>
+                        <div class="ml-auto">
+                            <i data-lucide="leaf" class="w-5 h-5 text-brand-leaf opacity-60"></i>
                         </div>
                     </div>
 
@@ -1212,7 +1242,7 @@
 
     <!-- GET A FREE QUOTE POPUP MODAL -->
     <div id="quote-modal"
-        class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);">
         <div class="bg-white max-w-lg w-full rounded-3xl p-8 shadow-2xl relative border border-brand-forest/20">
             <button onclick="closeQuoteModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700">
                 <i data-lucide="x" class="w-6 h-6"></i>
@@ -1269,26 +1299,37 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
+        // Intro screen: dismiss only on scroll
+        let introDismissed = false;
+        function dismissIntro() {
+            if (introDismissed) return;
+            introDismissed = true;
+            const intro = document.getElementById('intro-screen');
+            document.body.classList.remove('intro-active');
+            document.body.style.overflow = '';
+            intro.classList.add('is-fading');
+            setTimeout(() => {
+                intro.style.display = 'none';
+                intro.style.pointerEvents = 'none';
+            }, 900);
+        }
+
         // Navbar Scroll Shrink Effect
         window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
             const container = document.getElementById('navbar-container');
-            const intro = document.getElementById('intro-screen');
 
-            if (window.scrollY > 24) {
-                document.body.classList.remove('intro-active');
-                intro.classList.add('is-fading');
-            } else {
-                document.body.classList.add('intro-active');
-                intro.classList.remove('is-fading');
-            }
+            // Show navbar and dismiss intro as soon as user scrolls
+            document.body.classList.remove('intro-active');
+            dismissIntro();
 
             if (window.scrollY > 40) {
                 container.classList.remove('h-20');
                 container.classList.add('h-16');
+                document.documentElement.classList.add('nav-shrunk');
             } else {
                 container.classList.remove('h-16');
                 container.classList.add('h-20');
+                document.documentElement.classList.remove('nav-shrunk');
             }
         });
 
@@ -1326,12 +1367,23 @@
             });
         }
 
+        // Service Detail Modal (simple alert fallback)
+        function openServiceDetail(title, description) {
+            alert(title + '\n\n' + description);
+        }
+
         // Quote Modal Functions
         function openQuoteModal() {
-            document.getElementById('quote-modal').classList.remove('hidden');
+            const modal = document.getElementById('quote-modal');
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
         function closeQuoteModal() {
-            document.getElementById('quote-modal').classList.add('hidden');
+            const modal = document.getElementById('quote-modal');
+            modal.classList.add('hidden');
+            modal.style.display = '';
+            document.body.style.overflow = '';
         }
 
         // Form Submit Handlers
