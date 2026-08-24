@@ -1299,7 +1299,7 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Intro screen: dismiss only on scroll
+        // Intro screen: dismiss on an intentional explore gesture
         let introDismissed = false;
         function dismissIntro() {
             if (introDismissed) return;
@@ -1314,13 +1314,25 @@
             }, 900);
         }
 
+        window.addEventListener('wheel', dismissIntro, { once: true, passive: true });
+        window.addEventListener('touchstart', dismissIntro, { once: true, passive: true });
+        window.addEventListener('keydown', (event) => {
+            if (['ArrowDown', 'PageDown', ' ', 'End'].includes(event.key)) {
+                dismissIntro();
+            }
+        });
+
+        // Do not cover a section restored from a hash link after refresh.
+        if (window.location.hash) {
+            dismissIntro();
+        }
+
         // Navbar Scroll Shrink Effect
         window.addEventListener('scroll', () => {
             const container = document.getElementById('navbar-container');
 
-            // Show navbar and dismiss intro as soon as user scrolls
+            // Show navbar as soon as the document starts scrolling
             document.body.classList.remove('intro-active');
-            dismissIntro();
 
             if (window.scrollY > 40) {
                 container.classList.remove('h-20');
